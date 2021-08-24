@@ -4,26 +4,45 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField, Range(0f, 100f)]
+    private float maxSpeed;
+    [SerializeField, Range(0f, 100f)]
+    private float maxAcceleration;
+    private Camera mainCamera;
+    private Vector3 velocity;
+
+    private void Start()
+    {
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+    }
 
     void Update()
     {
+        MovePlayer();
+        LookAtMouse();
+    }
+
+    private void MovePlayer()
+    {
         float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");   
+        float vertical = Input.GetAxis("Vertical");
 
-        transform.position += new Vector3(horizontal, 0f, vertical) * speed * Time.deltaTime;
+        Vector3 desiredVelocity = new Vector3(horizontal, 0f, vertical) * maxSpeed;
+        float maxSpeedChange = maxAcceleration * Time.deltaTime;
+        velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
+        velocity.z = Mathf.MoveTowards(velocity.z, desiredVelocity.z, maxSpeedChange);
+        Vector3 displacement = velocity * Time.deltaTime;
+        transform.localPosition += displacement;
+    }
 
-        Ray mouseRay = GameObject.Find("Main Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+    private void LookAtMouse()
+    {
+        Ray mouseRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Plane p = new Plane(Vector3.up, transform.position);
         if (p.Raycast(mouseRay, out float hitDist))
         {
             Vector3 hitPoint = mouseRay.GetPoint(hitDist);
             transform.LookAt(hitPoint);
         }
-    }
-
-    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
-    {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 }

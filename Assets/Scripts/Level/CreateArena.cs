@@ -131,12 +131,13 @@ public partial class CreateArena : MonoBehaviour
     {
         TransformOnePatternIntoAnother(currentPattern, instantiatedTiles, nextPattern);
         UpdateCurrentAndNextPatterns(nextPattern, GetPatternData.Data);
+        yield return null;
 
-        while (true)
-        {
-            yield return new WaitForSeconds(timeBetweenTransformations_);
-            TransformOnePatternIntoAnother(currentPattern, instantiatedTiles, nextPattern);
-            UpdateCurrentAndNextPatterns(nextPattern, GetPatternData.Data);
-        }
+        //while (true)
+        //{
+        //    yield return new WaitForSeconds(timeBetweenTransformations_);
+        //    TransformOnePatternIntoAnother(currentPattern, instantiatedTiles, nextPattern);
+        //    UpdateCurrentAndNextPatterns(nextPattern, GetPatternData.Data);
+        //}
     }
 }
