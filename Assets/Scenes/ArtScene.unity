@@ -152,9 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfcdc029f3a84334c938ab8f3c4254e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modules:
+  currentWeapon: []
+  possibleModules:
   - {fileID: 11400000, guid: b2d765f67449d0747946a87065344eb0, type: 2}
   - {fileID: 11400000, guid: d8f9f3edeba379142ab3a23a1bc72145, type: 2}
+  - {fileID: 11400000, guid: 76d5c358d3033f74889ae9850a26b4cc, type: 2}
+  edgeModule: {fileID: 0}
 --- !u!4 &219336685
 Transform:
   m_ObjectHideFlags: 0
@@ -223,6 +226,10 @@ PrefabInstance:
     - target: {fileID: 8308499493593013501, guid: 50a5000455425324f8890ed6edc7b7b3, type: 3}
       propertyPath: m_Name
       value: DamageModule
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308499493593013501, guid: 50a5000455425324f8890ed6edc7b7b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50a5000455425324f8890ed6edc7b7b3, type: 3}

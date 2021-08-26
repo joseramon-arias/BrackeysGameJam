@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7745774563753891051}
   m_Layer: 0
-  m_Name: PlaceholderModule
+  m_Name: PlaceholderModule2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 7af35bdcc607b364ba1cabae7baa1e5d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1dbf6a5aea615444d9cf4ea82b5f1670, type: 2}
+      objectReference: {fileID: 2100000, guid: 11ee12ce1110f154893445346b2c191f, type: 2}
     - target: {fileID: 919132149155446097, guid: 7af35bdcc607b364ba1cabae7baa1e5d, type: 3}
       propertyPath: m_Name
       value: Sword
