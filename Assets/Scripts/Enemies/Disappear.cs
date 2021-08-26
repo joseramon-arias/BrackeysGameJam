@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class disappear : MonoBehaviour
+public class Disappear : MonoBehaviour
 {
     MeshRenderer thisMesh;
     // Start is called before the first frame update

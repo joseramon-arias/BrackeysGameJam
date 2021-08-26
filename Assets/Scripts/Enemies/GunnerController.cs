@@ -13,6 +13,7 @@ public class GunnerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         movementScript = GetComponent<FollowPlayer>();
         shootLogic = GetComponent<EnemyShooting>();
     }

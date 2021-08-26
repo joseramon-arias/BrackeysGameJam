@@ -25,7 +25,6 @@ public class FollowPlayer : MonoBehaviour
             agent.SetDestination(player.transform.position);
             if (!hasMoveStatusActivated)
             {
-                Debug.Log("Just Once right?");
                 agent.isStopped = false;
                 hasMoveStatusActivated = true;
             }

@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8084972113468699657, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
       propertyPath: m_Center.y
-      value: -1.5
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6196497912312346134, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public partial class CreateArena : MonoBehaviour
@@ -27,6 +28,9 @@ public partial class CreateArena : MonoBehaviour
     private float TileXScale => Step * tileXScaleModifier;
     private float TileZScale => Step * tileZScaleModifier;
     private Vector3 TileScale => new Vector3(TileXScale, tileYScale, TileZScale);
+
+    [SerializeField] private NavMeshSurface humanoidSurface;
+    [SerializeField] private NavMeshSurface ninjaSurface;
 
     void Start()
     {
@@ -72,7 +76,7 @@ public partial class CreateArena : MonoBehaviour
             }
 
             Vector3 position = new Vector3(Step * x + TileXScale / 2,
-                                           -tileYScale / 2, // This is negative because the arena is upside down
+                                           tileYScale / 2,
                                            Step * z + TileZScale / 2);
 
             instantiatedTiles_[i] = CreateTileOfType(currentPattern_[i], TileScale, position);
@@ -131,6 +135,8 @@ public partial class CreateArena : MonoBehaviour
     {
         TransformOnePatternIntoAnother(currentPattern, instantiatedTiles, nextPattern);
         UpdateCurrentAndNextPatterns(nextPattern, GetPatternData.Data);
+        humanoidSurface.BuildNavMesh();
+        ninjaSurface.BuildNavMesh();
         yield return null;
 
         //while (true)

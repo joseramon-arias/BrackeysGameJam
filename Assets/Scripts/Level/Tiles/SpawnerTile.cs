@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class SpawnerTile : Tile
 {
+    [SerializeField] private Enemy[] enemiesPrefabs;
+    // How much time to wait between each spawn
+    [SerializeField] private float coolDownSeconds;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(SpawnEnemies());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator SpawnEnemies()
     {
-        
+        while(true)
+        {
+            yield return new WaitForSeconds(coolDownSeconds);
+            SpawnEnemy();
+        }
+    }
+
+    private void SpawnEnemy()
+    {
+        Enemy enemyToSpawn = enemiesPrefabs[Random.Range(0, enemiesPrefabs.Length)];
+        Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
     }
 }

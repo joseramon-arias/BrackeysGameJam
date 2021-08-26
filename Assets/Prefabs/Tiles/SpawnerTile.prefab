@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1388646835906904805
+--- !u!114 &6151699047436296764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16,6 +16,11 @@ MonoBehaviour:
   easingForBuild: 15
   fadeOutSpeed: 0
   easingForDestroyWithFadeOut: 0
+  enemiesPrefabs:
+  - {fileID: -8977356757239320642, guid: 9d7cbb5a709c93247ad88022837fcee9, type: 3}
+  - {fileID: 2055696840827606227, guid: ed23b64e22fea494289f8825fda23776, type: 3}
+  - {fileID: 8410670398373503153, guid: c1e2308c2a4292b47898a67722f92c0e, type: 3}
+  coolDownSeconds: 2
 --- !u!1001 &124122758449434657
 PrefabInstance:
   m_ObjectHideFlags: 0
