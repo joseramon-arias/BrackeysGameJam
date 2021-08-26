@@ -26,6 +26,8 @@ public class SpawnerTile : Tile
     private void SpawnEnemy()
     {
         Enemy enemyToSpawn = enemiesPrefabs[Random.Range(0, enemiesPrefabs.Length)];
-        Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+        Vector3 spawningPosition = transform.position;
+        spawningPosition.y += enemyToSpawn.transform.localScale.y + transform.localScale.y / 2;
+        Enemy spawnedEnemy = Instantiate(enemyToSpawn, spawningPosition, Quaternion.identity);
     }
 }

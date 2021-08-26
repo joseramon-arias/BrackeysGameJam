@@ -17,8 +17,6 @@ MonoBehaviour:
   fadeOutSpeed: 0
   easingForDestroyWithFadeOut: 0
   enemiesPrefabs:
-  - {fileID: -8977356757239320642, guid: 9d7cbb5a709c93247ad88022837fcee9, type: 3}
-  - {fileID: 2055696840827606227, guid: ed23b64e22fea494289f8825fda23776, type: 3}
   - {fileID: 8410670398373503153, guid: c1e2308c2a4292b47898a67722f92c0e, type: 3}
   coolDownSeconds: 2
 --- !u!1001 &124122758449434657
