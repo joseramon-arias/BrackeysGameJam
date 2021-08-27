@@ -36,7 +36,6 @@ public class ClickSpawner : MonoBehaviour
         if (Physics.Raycast(myRay, out hit))
         { 
                 Instantiate(objectToinstantiate, hit.point+new Vector3(0,0.5f,0), Quaternion.identity);
-                Debug.Log(hit.point);
         }
 }
 }
