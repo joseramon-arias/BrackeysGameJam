@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+<<<<<<< HEAD:Assets/weaponModule.cs
 public enum Type
+=======
+public class WeaponModule : MonoBehaviour
+>>>>>>> develop:Assets/Scripts/WeaponModule.cs
 {
     damage,
     support,
