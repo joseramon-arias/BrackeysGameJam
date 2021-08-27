@@ -16,8 +16,7 @@ MonoBehaviour:
   easingForBuild: 15
   fadeOutSpeed: 0
   easingForDestroyWithFadeOut: 0
-  enemiesPrefabs:
-  - {fileID: 8410670398373503153, guid: c1e2308c2a4292b47898a67722f92c0e, type: 3}
+  enemiesPrefabs: []
   coolDownSeconds: 2
 --- !u!1001 &124122758449434657
 PrefabInstance:

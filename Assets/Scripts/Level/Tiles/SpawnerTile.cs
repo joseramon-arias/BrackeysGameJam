@@ -11,7 +11,10 @@ public class SpawnerTile : Tile
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemies());
+        if (enemiesPrefabs.Length > 0)
+        {
+            StartCoroutine(SpawnEnemies());
+        }
     }
 
     private IEnumerator SpawnEnemies()

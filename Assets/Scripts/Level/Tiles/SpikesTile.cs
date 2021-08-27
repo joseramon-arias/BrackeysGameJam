@@ -18,5 +18,6 @@ public class SpikesTile : Tile
 
     private void OnCollisionEnter(Collision collision)
     {
+
     }
 }
