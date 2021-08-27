@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -42,7 +43,7 @@ public partial class CreateArena : MonoBehaviour
 
     private string[] GetRandomPatternData(string[][] patternData)
     {
-        return patternData[Random.Range(0, patternData.Length)];
+        return patternData[UnityEngine.Random.Range(0, patternData.Length)];
     }
 
     private void UpdateCurrentAndNextPatterns(string[] nextPattern_, string[][] patternData)
@@ -113,6 +114,8 @@ public partial class CreateArena : MonoBehaviour
 
     private void TransformOnePatternIntoAnother(string[] currentPattern_, Tile[] instantiatedPattern_, string[] nextPattern_)
     {
+        bool atLeastOneChangeHappened = false;
+
         for (int i = 0; i < currentPattern.Length; i++)
         {
             if (nextPattern_[i] == currentPattern_[i]) {
@@ -127,23 +130,40 @@ public partial class CreateArena : MonoBehaviour
                 Tile newTile = CreateTileOfType(nextPattern_[i], TileScale * 0.5f, position);
                 newTile.BuildTile(TileScale, 0);
                 instantiatedPattern_[i] = newTile;
+
+                atLeastOneChangeHappened = true;
             }
+        }
+        
+        if (atLeastOneChangeHappened)
+        {
+            DestroyAllProps();
         }
     }
 
+    private void DestroyAllProps()
+    {
+        Barrel[] barrels = GameObject.FindObjectsOfType<Barrel>();
+        Array.ForEach(barrels, barrel => Destroy(barrel.gameObject));
+    }
+
     private IEnumerator StartTimerForTransformations(float timeBetweenTransformations_)
+    {
+        TransformAndUpdatePatterns();
+        yield return null;
+
+        while (true)
+        {
+            yield return new WaitForSeconds(timeBetweenTransformations_);
+            TransformAndUpdatePatterns();
+        }
+    }
+
+    private void TransformAndUpdatePatterns()
     {
         TransformOnePatternIntoAnother(currentPattern, instantiatedTiles, nextPattern);
         UpdateCurrentAndNextPatterns(nextPattern, GetPatternData.Data);
         humanoidSurface.BuildNavMesh();
         ninjaSurface.BuildNavMesh();
-        yield return null;
-
-        //while (true)
-        //{
-        //    yield return new WaitForSeconds(timeBetweenTransformations_);
-        //    TransformOnePatternIntoAnother(currentPattern, instantiatedTiles, nextPattern);
-        //    UpdateCurrentAndNextPatterns(nextPattern, GetPatternData.Data);
-        //}
     }
 }

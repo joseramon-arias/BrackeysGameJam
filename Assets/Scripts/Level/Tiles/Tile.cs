@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    [SerializeField] protected float buildSpeed;
-    [SerializeField] protected EasingFunctionName easingForBuild;
-    [SerializeField] protected float fadeOutSpeed;
-    [SerializeField] protected EasingFunctionName easingForDestroyWithFadeOut;
+    [SerializeField] private float buildSpeed;
+    [SerializeField] private EasingFunctionName easingForBuild;
+    [SerializeField] private float fadeOutSpeed;
+    [SerializeField] private EasingFunctionName easingForDestroyWithFadeOut;
 
     public void BuildTile(Vector3 endScale, float delay)
     {
@@ -26,7 +26,7 @@ public class Tile : MonoBehaviour
 
     protected virtual void DestroyTileImmediately()
     {
-        Destroy(gameObject); // TODO Change this
+        Destroy(gameObject);
     }
 
     protected virtual IEnumerator BuildTileEnumerator(Vector3 endScale, EasingFunctionDelegate easingFunction, float effectSpeed, float delayBeforeBuilding)

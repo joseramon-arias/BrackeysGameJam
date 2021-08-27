@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &5210068925565764345
+--- !u!114 &4276276296923382768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7231af5838f96494eb4c9eafed3d23eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildSpeed: 20
+  buildSpeed: 10
   easingForBuild: 15
   fadeOutSpeed: 0
   easingForDestroyWithFadeOut: 0
---- !u!1 &7301810638552974099
+--- !u!1 &8134945617558013610
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24,24 +24,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2763048367216847265}
-  - component: {fileID: 416542406677304940}
-  - component: {fileID: 4886772630667708394}
-  - component: {fileID: 5091596923711247011}
-  m_Layer: 7
-  m_Name: DamageCollider
+  - component: {fileID: 2458189907699541433}
+  - component: {fileID: 4022527233332657330}
+  - component: {fileID: 1262100719795458574}
+  - component: {fileID: 5964951993685194746}
+  - component: {fileID: 4666060765413376077}
+  m_Layer: 0
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2763048367216847265
+--- !u!4 &2458189907699541433
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301810638552974099}
+  m_GameObject: {fileID: 8134945617558013610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -49,22 +50,22 @@ Transform:
   m_Father: {fileID: 1320925839506294097}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &416542406677304940
+--- !u!33 &4022527233332657330
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301810638552974099}
+  m_GameObject: {fileID: 8134945617558013610}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4886772630667708394
+--- !u!23 &1262100719795458574
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301810638552974099}
-  m_Enabled: 1
+  m_GameObject: {fileID: 8134945617558013610}
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -99,19 +100,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5091596923711247011
+--- !u!65 &5964951993685194746
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301810638552974099}
+  m_GameObject: {fileID: 8134945617558013610}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4666060765413376077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134945617558013610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23b5e7cee853a1478170e4406a879b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4075051551378693680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,10 +135,6 @@ PrefabInstance:
     - target: {fileID: 3087677994303265633, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087677994303265633, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3087677994303265633, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,28 +180,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikesTile
       objectReference: {fileID: 0}
-    - target: {fileID: 3176487866930800023, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3176487866930800023, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5566530034711930056, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1a8c2ea5eebd4234b952d4d071e9ca55, type: 2}
-    - target: {fileID: 8084972113468699657, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8084972113468699657, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 6196497912312346134, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
+    - {fileID: 4108189355865279817, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4075251cb9c824648b2e60041eec3dc1, type: 3}
 --- !u!1 &1484036309892430759 stripped
 GameObject:

@@ -10,10 +10,12 @@ public class PlayerMovement : MonoBehaviour
     private float maxAcceleration;
     private Camera mainCamera;
     private Vector3 velocity;
+    private Rigidbody rb;
 
     private void Start()
     {
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -26,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+
+        rb.velocity = Vector3.zero;
 
         Vector3 desiredVelocity = new Vector3(horizontal, 0f, vertical) * maxSpeed;
         float maxSpeedChange = maxAcceleration * Time.deltaTime;
