@@ -26,7 +26,7 @@ public class Tile : MonoBehaviour
 
     protected virtual void DestroyTileImmediately()
     {
-        Destroy(gameObject);
+        Destroy(gameObject); // TODO Change this
     }
 
     protected virtual IEnumerator BuildTileEnumerator(Vector3 endScale, EasingFunctionDelegate easingFunction, float effectSpeed, float delayBeforeBuilding)
