@@ -77,6 +77,7 @@ public class WeaponSystem : MonoBehaviour
             Transform parentModule = attModule.parent.parent.parent; //parent three times because it's a slot inside an object and a prefab
             attModule.SetParent(parentModule);
             attModule.localPosition = Vector3.zero;
+            attModule.localRotation = Quaternion.identity;
         }
         GameObject module = currentWeapon[index];
         currentWeapon.RemoveAt(index);

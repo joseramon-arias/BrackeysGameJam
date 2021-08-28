@@ -17,7 +17,7 @@ public class WeaponModule : ScriptableObject
     public GameObject prefab;
     public ModuleType type;
     public string name = "module name";
-    [Multiline]
+    [TextArea]
     public string description = "sample description";
     public Sprite icon;
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7af35bdcc607b364ba1cabae7baa1e5d
+guid: 05f34516165388a46bd36ac4880468b9
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Sword
+      name: StickArticulated
     second: {fileID: 2100000, guid: 7ce5001c518c594468ac8c7fe1306300, type: 2}
   materials:
     materialImportMode: 1

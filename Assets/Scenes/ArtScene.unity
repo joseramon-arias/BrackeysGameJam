@@ -155,8 +155,10 @@ MonoBehaviour:
   currentWeapon: []
   possibleModules:
   - {fileID: 11400000, guid: b2d765f67449d0747946a87065344eb0, type: 2}
-  - {fileID: 11400000, guid: d8f9f3edeba379142ab3a23a1bc72145, type: 2}
-  - {fileID: 11400000, guid: 76d5c358d3033f74889ae9850a26b4cc, type: 2}
+  - {fileID: 11400000, guid: a69bf12003d9238489ef52c906f5095c, type: 2}
+  - {fileID: 11400000, guid: 5fe258ba80f05cf4295ce9c57746e7fb, type: 2}
+  - {fileID: 11400000, guid: b1192ed0abbbc7b4a9cea5999a34b949, type: 2}
+  - {fileID: 11400000, guid: e3551740739bc224aad924607fa5d5ab, type: 2}
   edgeModule: {fileID: 0}
 --- !u!4 &219336685
 Transform:

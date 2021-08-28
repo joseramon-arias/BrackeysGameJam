@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 706a534d567710a42bade4d6447656f0, type: 3}
-  m_Name: PlaceholderModule
+  m_Name: SwingingModule
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8308499493593013501, guid: d20ccd28d0fe75949a39278713a81e76, type: 3}
+  prefab: {fileID: 8308499493593013501, guid: f034d54b9f031884c9dfc2551e28a3ec, type: 3}
   type: 1
-  name: Placeholder Module
-  description: Placeholder
+  name: Swinging Module
+  description: Swings from left to right
   icon: {fileID: 0}
