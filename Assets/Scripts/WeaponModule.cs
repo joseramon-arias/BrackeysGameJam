@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-<<<<<<< HEAD:Assets/weaponModule.cs
-public enum Type
-=======
-public class WeaponModule : MonoBehaviour
->>>>>>> develop:Assets/Scripts/WeaponModule.cs
+public enum ModuleType
 {
     damage,
     support,
@@ -19,7 +15,7 @@ public class WeaponModule : ScriptableObject
 {
     //[HideInInspector] public GameObject instance;
     public GameObject prefab;
-    public Type type;
+    public ModuleType type;
     public string name = "module name";
     [Multiline]
     public string description = "sample description";
