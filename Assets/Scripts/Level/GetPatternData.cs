@@ -5,11 +5,21 @@ using UnityEngine;
 public class GetPatternData : MonoBehaviour
 {
     [SerializeField] private TextAsset patternsCsv;
-    private static List<string[]> data = new List<string[]>();
+    public TextAsset PatternsCsv
+    {
+        set { patternsCsv = value; }
+    }
+    private static List<string[]> data;
     public static string[][] Data => data.ToArray();
 
     void Awake()
     {
+        WrangleDataAndCreatePatternsArray();
+    }
+
+    public void WrangleDataAndCreatePatternsArray()
+    {
+        data = new List<string[]>();
         string fileData = patternsCsv.ToString();
         fileData = fileData.Replace("\r", string.Empty);
         string[] lines = fileData.Split("\n"[0]);

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ISlime
 {
-    void TakeDamage();
+    void TakeDamage(int amount);
 }

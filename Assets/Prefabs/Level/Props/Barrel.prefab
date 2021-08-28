@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 659663691242355240}
   - component: {fileID: 3773006393893909240}
   - component: {fileID: 4141602627169482973}
+  - component: {fileID: -2030603518058153981}
   m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
@@ -110,7 +111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131b4ad9630da3b49a7e99bf10b47bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2030603518058153981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676734099552527268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d12f9d763a17b4e8f0a8e1e277a619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   goldPrefab: {fileID: 7626220792909977797, guid: 830d421f065a2084897931d92e8d869d, type: 3}
   maxGoldToSpawn: 5
   explosionRadius: 10
-  explosionPower: 400
+  explosionPower: 300

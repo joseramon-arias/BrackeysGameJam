@@ -2,25 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barrel : MonoBehaviour
+public class GoldSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject goldPrefab;
     [SerializeField, Range(1, 5)] private int maxGoldToSpawn;
     [SerializeField] float explosionRadius;
     [SerializeField] float explosionPower;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        WeaponDummy weaponDummy = other.gameObject.GetComponent<WeaponDummy>();
-
-        if (weaponDummy != null)
-        {
-            SpawnGold();
-            Destroy(gameObject);
-        }
-    }
-
-    private void SpawnGold()
+    public void SpawnGold()
     {
         Vector3 explosionPos = transform.position;
 

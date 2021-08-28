@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650f300ff2d262941af5109b08177cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildSpeed: 20
+  buildSpeed: 30
   easingForBuild: 15
   fadeOutSpeed: 0
   easingForDestroyWithFadeOut: 0
-  enemiesPrefabs: []
-  coolDownSeconds: 2
 --- !u!1001 &124122758449434657
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class Ninja : Enemy, ISlime
 {
     private bool isInvisible;
     private MeshRenderer mesh;
+    private List<Collider> spikesColliding = new List<Collider>();
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,9 @@ public class Ninja : Enemy, ISlime
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("WAAAA");
         if (other.tag == "Spikes")
         {
+            spikesColliding.Add(other);
             isInvisible = true;
             mesh.enabled = false;
         }
@@ -33,16 +34,22 @@ public class Ninja : Enemy, ISlime
     {
         if (other.tag == "Spikes")
         {
-            isInvisible = false;
-            mesh.enabled = true;
+            spikesColliding.Remove(other);
+
+            if (spikesColliding.Count == 0)
+            {
+                isInvisible = false;
+                mesh.enabled = true;
+            }
         }
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int amount)
     {
         if (!isInvisible)
         {
-            slimeHealth.ApplyDamage(hitDamage);
+            slimeHealth.ApplyDamage(amount);
+            CheckForDeath();
         }
     }
 }

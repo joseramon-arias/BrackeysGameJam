@@ -10,6 +10,7 @@ public class GoldCounter : MonoBehaviour
         get { return goldCount; }
         set { goldCount = value; }
     }
+    [SerializeField] TMPro.TextMeshProUGUI goldCountText;
 
     private void Awake()
     {
@@ -19,6 +20,6 @@ public class GoldCounter : MonoBehaviour
     public void AddGold()
     {
         GoldCount += 1;
-        Debug.Log(GoldCount);
+        goldCountText.text = $"Gold: {GoldCount}";
     }
 }

@@ -150,12 +150,17 @@ public partial class CreateArena : MonoBehaviour
     private IEnumerator StartTimerForTransformations(float timeBetweenTransformations_)
     {
         TransformAndUpdatePatterns();
-        yield return null;
+        yield return new WaitForSeconds(0.5f);
+        humanoidSurface.BuildNavMesh();
+        ninjaSurface.BuildNavMesh();
 
         while (true)
         {
             yield return new WaitForSeconds(timeBetweenTransformations_);
             TransformAndUpdatePatterns();
+            yield return new WaitForSeconds(0.5f);
+            humanoidSurface.BuildNavMesh();
+            ninjaSurface.BuildNavMesh();
         }
     }
 
@@ -163,7 +168,5 @@ public partial class CreateArena : MonoBehaviour
     {
         TransformOnePatternIntoAnother(currentPattern, instantiatedTiles, nextPattern);
         UpdateCurrentAndNextPatterns(nextPattern, GetPatternData.Data);
-        humanoidSurface.BuildNavMesh();
-        ninjaSurface.BuildNavMesh();
     }
 }

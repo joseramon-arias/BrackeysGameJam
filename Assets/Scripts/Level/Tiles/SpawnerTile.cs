@@ -4,33 +4,31 @@ using UnityEngine;
 
 public class SpawnerTile : Tile
 {
-    [SerializeField] private Enemy[] enemiesPrefabs;
-    // How much time to wait between each spawn
-    [SerializeField] private float coolDownSeconds;
+    private WaveManager waveManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (enemiesPrefabs.Length > 0)
-        {
-            StartCoroutine(SpawnEnemies());
-        }
+        waveManager = GameObject.FindObjectOfType<WaveManager>();
+        StartCoroutine(SpawnEnemies());
     }
 
     private IEnumerator SpawnEnemies()
     {
         while(true)
         {
-            yield return new WaitForSeconds(coolDownSeconds);
+            int timeToWait = Random.Range(waveManager.CurrentWaveParameters.MinSpawnSpeed,
+                                          waveManager.CurrentWaveParameters.MaxSpawnSpeed);
+            yield return new WaitForSeconds(timeToWait);
             SpawnEnemy();
         }
     }
 
     private void SpawnEnemy()
     {
-        Enemy enemyToSpawn = enemiesPrefabs[Random.Range(0, enemiesPrefabs.Length)];
+        Enemy enemyToSpawn = waveManager.GetNextEnemyInStack();
         Vector3 spawningPosition = transform.position;
         spawningPosition.y += enemyToSpawn.transform.localScale.y + transform.localScale.y / 2;
-        Enemy spawnedEnemy = Instantiate(enemyToSpawn, spawningPosition, Quaternion.identity);
+        Instantiate(enemyToSpawn, spawningPosition, Quaternion.identity);
     }
 }

@@ -12,11 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e58973ca2aaa047a9eb8c92056ae29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildSpeed: 20
+  buildSpeed: 30
   easingForBuild: 15
   fadeOutSpeed: 0
   easingForDestroyWithFadeOut: 0
   barrelPrefab: {fileID: 4141602627169482973, guid: 5009b7eac3c159b4b8a5f80e4ae99812, type: 3}
+--- !u!114 &3483569700621714862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519294735370188107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d12f9d763a17b4e8f0a8e1e277a619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldPrefab: {fileID: 7626220792909977797, guid: 830d421f065a2084897931d92e8d869d, type: 3}
+  maxGoldToSpawn: 5
+  explosionRadius: 5
+  explosionPower: 400
 --- !u!1001 &1342886862363545820
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,8 +17,9 @@ public class Kamikaze : Enemy, ISlime
         //movementScript.MoveStatus = false;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int amount)
     {
-        slimeHealth.ApplyDamage(hitDamage);
+        slimeHealth.ApplyDamage(amount);
+        CheckForDeath();
     }
 }

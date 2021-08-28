@@ -64,8 +64,9 @@ public class Gunner : Enemy, ISlime
         }
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int amount)
     {
-        slimeHealth.ApplyDamage(hitDamage);
+        slimeHealth.ApplyDamage(amount);
+        CheckForDeath();
     }
 }

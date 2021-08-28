@@ -50,7 +50,7 @@ MonoBehaviour:
   barrierTile: {fileID: 4785745342746499129, guid: 37c11f2f25601e747a2ddb913c574fc8, type: 3}
   barrelTile: {fileID: 603720599649344850, guid: 1ef72ef242bca1f4cafae82a34e49179, type: 3}
   spawnerTile: {fileID: 6151699047436296764, guid: 1e549a7566302f047b3cf4f7d5425f6c, type: 3}
-  timeBetweenTransformations: 5
+  timeBetweenTransformations: 10
   graphWidth: 50
   horizontalCount: 16
   tileXScaleModifier: 1
@@ -116,6 +116,10 @@ PrefabInstance:
     - target: {fileID: 5964140258800441161, guid: bd83aa11dcaf03f4ca79f6a69a355b6f, type: 3}
       propertyPath: m_AgentTypeID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964140258800441161, guid: bd83aa11dcaf03f4ca79f6a69a355b6f, type: 3}
+      propertyPath: m_LayerMask.m_Bits
+      value: 4294967095
       objectReference: {fileID: 0}
     - target: {fileID: 8406384299058073256, guid: bd83aa11dcaf03f4ca79f6a69a355b6f, type: 3}
       propertyPath: m_Name

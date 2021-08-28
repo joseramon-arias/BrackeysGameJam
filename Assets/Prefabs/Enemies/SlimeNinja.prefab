@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 6311837044349617274}
   - component: {fileID: 6311837044349617275}
   - component: {fileID: 6311837044349617272}
-  - component: {fileID: 6311837044349617273}
   - component: {fileID: 6311837044349617254}
   - component: {fileID: 6311837044349617255}
   - component: {fileID: 6311837044349617279}
-  m_Layer: 0
+  - component: {fileID: 412493962175493516}
+  m_Layer: 6
   m_Name: SlimeNinja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,19 +124,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6311837044349617273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6311837044349617252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d9d882bff4edd4392fbb5a180df18f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitDamage: 0
 --- !u!114 &6311837044349617254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cde5cca04b97bd4195251099e46c943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth: 5
 --- !u!114 &6311837044349617255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe3008f9175b8749aae969ee6340890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitDamage: 0
+  goldSpawner: {fileID: 412493962175493516}
 --- !u!54 &6311837044349617279
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -177,5 +164,21 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &412493962175493516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6311837044349617252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d12f9d763a17b4e8f0a8e1e277a619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldPrefab: {fileID: 7626220792909977797, guid: 830d421f065a2084897931d92e8d869d, type: 3}
+  maxGoldToSpawn: 2
+  explosionRadius: 10
+  explosionPower: 300

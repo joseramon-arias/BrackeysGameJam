@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     private bool moveStatus = true;
     private bool hasMoveStatusActivated;
     protected Health slimeHealth;
-    [SerializeField] protected int hitDamage;
+    [SerializeField] protected GoldSpawner goldSpawner;
 
     public bool MoveStatus 
     { 
@@ -23,12 +23,6 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         slimeHealth = GetComponent<Health>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -51,5 +45,14 @@ public class Enemy : MonoBehaviour
             hasMoveStatusActivated = false;
         }
 
+    }
+
+    protected void CheckForDeath()
+    {
+        if (slimeHealth.CurrentHealth <= 0 )
+        {
+            goldSpawner.SpawnGold();
+            Destroy(gameObject);
+        }
     }
 }

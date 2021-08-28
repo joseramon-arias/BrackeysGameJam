@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 2321288414616858328}
   - component: {fileID: 2321288414616858329}
   - component: {fileID: 2321288414616858310}
-  - component: {fileID: 2321288414616858311}
   - component: {fileID: 2321288414616858308}
   - component: {fileID: 2321288414616858309}
-  m_Layer: 0
+  - component: {fileID: 4857266845353517885}
+  - component: {fileID: 6407586700931626089}
+  m_Layer: 6
   m_Name: SlimeGunner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,19 +124,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2321288414616858311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2321288414616858306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d9d882bff4edd4392fbb5a180df18f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitDamage: 0
 --- !u!114 &2321288414616858308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cde5cca04b97bd4195251099e46c943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth: 5
 --- !u!114 &2321288414616858309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +149,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0e8f692dc1cdf44811119e2a5d5ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitDamage: 20
+  goldSpawner: {fileID: 6407586700931626089}
   projectile: {fileID: 2792558885527744997, guid: 7935f3b20a9b4584190383f7a28352ab, type: 3}
   distThreshold: 10
+--- !u!54 &4857266845353517885
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2321288414616858306}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!114 &6407586700931626089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2321288414616858306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d12f9d763a17b4e8f0a8e1e277a619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldPrefab: {fileID: 7626220792909977797, guid: 830d421f065a2084897931d92e8d869d, type: 3}
+  maxGoldToSpawn: 2
+  explosionRadius: 10
+  explosionPower: 300

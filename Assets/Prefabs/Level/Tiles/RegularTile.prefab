@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c051268e1dc90143a625a7f83fca833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildSpeed: 20
+  buildSpeed: 30
   easingForBuild: 15
   fadeOutSpeed: 0
   easingForDestroyWithFadeOut: 0

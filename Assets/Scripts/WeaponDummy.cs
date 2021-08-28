@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class WeaponDummy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            ISlime slime = other.GetComponent<ISlime>();
+            if (slime != null)
+            {
+                slime.TakeDamage(5);
+            }
+        }
     }
 }
